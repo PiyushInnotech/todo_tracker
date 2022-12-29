@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/">Projects</router-link> |
+    <router-link to="/">Projects</router-link> 
     <router-link to="/addProject">Add a new Project</router-link>
   </nav>
   <router-view/>
@@ -21,10 +21,14 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #959da1;
+  margin-right: 20px;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: 400;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  border-bottom: 2px solid #19d4be ;
 }
 </style>
