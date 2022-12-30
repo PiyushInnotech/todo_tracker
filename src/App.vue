@@ -6,6 +6,14 @@
   <router-view/>
 </template>
 
+<script>
+import {todoMixin} from './components/todoMixin'
+export default{
+  name: "App",
+  mixins: [todoMixin]
+}
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

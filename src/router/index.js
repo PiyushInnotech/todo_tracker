@@ -2,14 +2,18 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/',
-    name: 'viewProject',
+    path:'/',
+    redirect : 'project'
+  },
+  {
+    path: '/project',
+    name: 'project',
     component: () => import('../views/viewProject.vue'),
-    redirect: 'view',
+    redirect: '/view',
     children: [
-      { path: ':view', name: 'view', component: () => import("../components/allProject.vue"), props: true },
-      { path: ':ongoing', name: 'ongoing', component: () => import("../components/onProject.vue"), props: true },
-      { path: ':completed', name: 'completed', component: () => import("../components/doneProject.vue"), props: true },
+      { path: '/:view', name: 'view', component: () => import("../components/allProject.vue"), props: true },
+      { path: '/:view', name: 'ongoing', component: () => import("../components/allProject.vue"), props: true },
+      { path: '/:view', name: 'completed', component: () => import("../components/allProject.vue"), props: true },
     ]
   },
   {

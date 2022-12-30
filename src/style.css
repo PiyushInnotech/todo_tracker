@@ -14,7 +14,7 @@ body {
     flex-direction: column;
 }
 
-.todoWrap {
+.wrap {
     background-color: white;
     margin-bottom: 30px;
     margin-right: 40px;
@@ -37,8 +37,9 @@ body {
 
 .line1 {
     width: 8px;
-    height: 100%;
+    height: 105%;
     border-bottom-left-radius: 5px;
+    margin-top: -5px;
 }
 
 .todoHead {

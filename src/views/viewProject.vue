@@ -3,10 +3,10 @@
     <router-link :to="{ name: 'view', params: { view: view } }"
       >view all</router-link
     >
-    <router-link :to="{ name: 'ongoing', params: { ongoing: ongoing } }"
+    <router-link :to="{ name: 'ongoing', params: { view: ongoing } }"
       >ongoing</router-link
     >
-    <router-link :to="{ name: 'completed', params: { completed: complete } }"
+    <router-link :to="{ name: 'completed', params: { view: complete } }"
       >completed</router-link
     >
     <router-view />
