@@ -11,7 +11,7 @@ export default {
   data() {
     return {};
   },
-  props: ["viewall"],
+  props: ["view"],
   components: {
     todoData,
   },

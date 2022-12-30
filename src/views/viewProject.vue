@@ -1,6 +1,6 @@
 <template>
   <div class="viewLinks">
-    <router-link :to="{ name: 'viewall', params: { viewall: view } }"
+    <router-link :to="{ name: 'view', params: { view: view } }"
       >view all</router-link
     >
     <router-link :to="{ name: 'ongoing', params: { ongoing: ongoing } }"
