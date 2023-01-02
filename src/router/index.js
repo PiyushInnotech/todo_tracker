@@ -11,9 +11,9 @@ const routes = [
     component: () => import('../views/viewProject.vue'),
     redirect: '/view',
     children: [
-      { path: '/:view', name: 'view', component: () => import("../components/allProject.vue"), props: true },
-      { path: '/:view', name: 'ongoing', component: () => import("../components/allProject.vue"), props: true },
-      { path: '/:view', name: 'completed', component: () => import("../components/allProject.vue"), props: true },
+      { path: ':view', name: 'view', component: () => import("../components/allProject.vue"), props: true },
+      { path: ':view', name: 'ongoing', component: () => import("../components/allProject.vue"), props: true },
+      { path: ':view', name: 'completed', component: () => import("../components/allProject.vue"), props: true },
     ]
   },
   {
@@ -25,7 +25,7 @@ const routes = [
     path: '/:catchAll(.*)',
     name: 'notFound',
     component: () =>
-    import("../views/notFound.vue")
+      import("../views/notFound.vue")
   }
 ]
 

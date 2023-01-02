@@ -5,7 +5,7 @@
       <input type="text" v-model="newTodo.name" />
       <label>Description</label>
       <textarea rows="10" v-model="newTodo.description"></textarea>
-      <button @click.prevent="handleSubmit">Add project</button>
+      <button @click="handleSubmit">Add project</button>
     </form>
   </div>
 </template>
@@ -16,14 +16,17 @@ export default {
   name: "addProject",
   mixins: [todoMixin],
   data() {
-    return {};
+    return {
+      a: [],
+    };
   },
   props: ["todos"],
   methods: {
     handleSubmit() {
-      this.newTodo.id = this.todoList.length;
-      this.todoList.push(this.newTodo);
-      console.log();
+      this.a = JSON.parse(localStorage.getItem("todoLists"));
+      this.newTodo.id = this.a.length;
+      this.a.push(this.newTodo);
+      localStorage.setItem("todoLists", JSON.stringify(this.a));
     },
   },
 };
