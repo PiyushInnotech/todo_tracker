@@ -22,7 +22,9 @@
       </div>
       <div class="todoCol" v-if="todo.showDes">
         <div class="line1" :class="todo.isComplete ? 'comp' : 'incomp'"></div>
-        <p class="todoInfo">{{ todo.description }}</p>
+        <div class="desc">
+          <p class="todoInfo">{{ todo.description }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -53,8 +55,9 @@ export default {
   props: ["view"],
   methods: {
     taskCheck(key) {
-      this.todos[key].isComplete = !this.todos[key].isComplete;
-      localStorage.setItem("todoLists", JSON.stringify(this.todos));
+      // this.todos[key].isComplete = !this.todos[key].isComplete;
+      this.todoList[key].isComplete = !this.todoList[key].isComplete
+      localStorage.setItem("todoLists", JSON.stringify(this.todoList));
     },
     deleteTask(key) {
       this.todoList = this.todoList.filter((todo) => todo.id != key);
