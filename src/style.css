@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e8ebe9;
+}
+
+.todoWrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap {
+    background-color: white;
+    margin-bottom: 30px;
+    margin-right: 40px;
+    height: 100%;
+    border-radius: 7px;
+}
+
+.todoCol {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.line {
+    width: 7px;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.line1 {
+    width: 8px;
+    height: 105%;
+    border-bottom-left-radius: 5px;
+    margin-top: -5px;
+}
+
+.todoHead {
+    margin-left: 35px;
+    width: 80%;
+    color: #4a4d4f;
+}
+
+.comp {
+    background-color: green;
+}
+
+.incomp {
+    background-color: crimson;
+}
+
+.icon {
+    font-size: 30px;
+    color: #959da1;
+    margin-right: 70px;
+}
+
+.iconComp {
+    color: green;
+}
+
+.iconIncomp {
+    color: crimson;
+}
+
+.todoInfo {
+    margin-right: 30px;
+    width: 90%;
+}
+
+.hidden {
+    display: none;
+}
+
+.formWrapper {
+    background-color: white;
+    height: 300px;
+    margin-left: 60px;
+    margin-top: 40px;
+    margin-right: 60px;
+    border-radius: 5px;
+}
+
+.wrapper {
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    align-items: left;
+    text-align: left;
+    display: flex;
+    border-radius: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+
+label {
+    color: #959da1;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+input {
+    display: block;
+    width: 90%;
+    margin-top: 15px;
+    height: 30px;
+    font-size: 18px;
+    color: gray;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #bec2c4;
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+
+textarea {
+    width: 90%;
+    border-color: #bec2c4;
+    margin-top: 10px;
+    font-size: 20px;
+    color: gray;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    align-items: center;
+    margin-left: 37%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(72, 155, 130);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.marg {
+    margin-top: 60px;
+}
+i{
+    cursor: pointer;
+}
+.desc{
+    margin-left: 30px;
+}

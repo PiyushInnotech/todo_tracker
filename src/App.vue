@@ -1,10 +1,21 @@
 <template>
   <nav>
-    <router-link to="/">Projects</router-link> |
+    <router-link :to="{ name: 'project' }">Projects</router-link>
     <router-link to="/addProject">Add a new Project</router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
+
+<script>
+import { todoMixin } from "./components/todoMixin";
+export default {
+  name: "App",
+  mixins: [todoMixin],
+  mounted() {
+    localStorage.setItem("todoLists", JSON.stringify(this.todoList));
+  },
+};
+</script>
 
 <style>
 #app {
@@ -21,10 +32,14 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #959da1;
+  margin-right: 20px;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: 400;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+nav a.router-link-active {
+  border-bottom: 2px solid #19d4be;
 }
 </style>
