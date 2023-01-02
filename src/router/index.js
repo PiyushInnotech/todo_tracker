@@ -1,12 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
+  // {
+  //   path:'/',
+  //   redirect : 'project'
+  // },
   {
-    path:'/',
-    redirect : 'project'
-  },
-  {
-    path: '/project',
+    path: '/',
     name: 'project',
     component: () => import('../views/viewProject.vue'),
     redirect: '/view',

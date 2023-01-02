@@ -1,5 +1,5 @@
 <template>
-  <div class="todoWrapper">
+  <div class="todoWrapper" v-show="!showForm">
     <div v-for="todo in todos" :key="todo.id" class="wrap">
       <div class="todoCol" v-show="!showForm">
         <div class="line" :class="todo.isComplete ? 'comp' : 'incomp'"></div>
@@ -9,7 +9,7 @@
         <div class="icon" @click="deleteTask(todo.id)">
           <i class="fa-solid fa-trash"></i>
         </div>
-        <div class="icon">
+        <div class="icon" @click="updateTask(todos.indexOf(todo))">
           <i class="fa-sharp fa-solid fa-pen"></i>
         </div>
         <div
@@ -25,6 +25,15 @@
         <p class="todoInfo">{{ todo.description }}</p>
       </div>
     </div>
+  </div>
+  <div class="wrapper marg" v-show="showForm">
+    <form class="form">
+      <label> Title</label>
+      <input type="text" v-model="newTodo.name" />
+      <label>Description</label>
+      <textarea rows="10" v-model="newTodo.description"></textarea>
+      <button @click.prevent="updateTodo">update project</button>
+    </form>
   </div>
 </template>
 
@@ -51,6 +60,20 @@ export default {
     showDescription(key) {
       this.todos[key].showDes = !this.todos[key].showDes;
     },
+    updateTask(key){
+      this.newTodo.name = this.todoList[key].name
+      this.newTodo.description = this.todoList[key].description
+      this.showForm= true
+      this.newTodo.id = key
+      this.newTodo.isComplete = this.todoList[key].isComplete
+    },
+    updateTodo(key){
+      key = this.newTodo.id
+      this.showForm = false
+      this.todoList[key].name = this.newTodo.name
+      this.todoList[key].description = this.newTodo.description
+    },
+
     showArray(){
         if(this.$route.params.view === 'complete'){
         this.todos = this.todoList.filter( (todo) => todo.isComplete)
@@ -69,7 +92,6 @@ export default {
   watch: {
     $route(){
       this.showArray()
-      console.log(this.todoList);
     },
   }
 };

@@ -16,7 +16,7 @@
 <script>
 export default {
   name: "viewProject",
-  data() {
+    data() {
     return {
       view: "view",
       ongoing: "ongoing",

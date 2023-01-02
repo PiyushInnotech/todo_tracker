@@ -35,6 +35,13 @@ export  const todoMixin ={
               showDes: false,
             },
           ],
+          newTodo: {
+            name: '',
+            description: '',
+            isComplete: false,
+            showDes: false,
+            id: ''
+        },
     }
    }
 }

@@ -2,38 +2,30 @@
   <div class="wrapper">
     <form class="form">
       <label> Title</label>
-      <input type="text" v-model="newTodo.name"/>
+      <input type="text" v-model="newTodo.name" />
       <label>Description</label>
       <textarea rows="10" v-model="newTodo.description"></textarea>
-      <button @click.prevent="handleSubmit">Update project</button>
+      <button @click.prevent="handleSubmit">Add project</button>
     </form>
   </div>
 </template>
 
 <script>
-import {todoMixin} from '../components/todoMixin'
+import { todoMixin } from "../components/todoMixin";
 export default {
   name: "addProject",
   mixins: [todoMixin],
-  data(){
-    return{
-        newTodo: {
-            name: '',
-            description: '',
-            isComplete: false,
-            showDes: false,
-            id: ''
-        },
-    }
+  data() {
+    return {};
   },
-  props:['todos'],
+  props: ["todos"],
   methods: {
-    handleSubmit(){
-        this.newTodo.id = this.todoList.length
-        this.todoList.push(this.newTodo)
-        console.log(this.todoList)
-    }
-  }
+    handleSubmit() {
+      this.newTodo.id = this.todoList.length;
+      this.todoList.push(this.newTodo);
+      console.log();
+    },
+  },
 };
 </script>
 
@@ -81,17 +73,17 @@ textarea {
   font-size: 20px;
   color: gray;
 }
-button{
-    width: 200px;
-    height: 50px;
-    align-items: center;
-    margin-left: 37%;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(72, 155, 130);
-    color: white;
-    font-size: 20px;
+button {
+  width: 200px;
+  height: 50px;
+  align-items: center;
+  margin-left: 37%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(72, 155, 130);
+  color: white;
+  font-size: 20px;
 }
 </style>
